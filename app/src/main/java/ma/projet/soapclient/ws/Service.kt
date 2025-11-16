@@ -11,7 +11,7 @@ import java.util.*
 
 class Service {
 
-    // ⚠️ Utilise bien le même namespace et la même URL que ton WSDL Spring
+  
     private val NAMESPACE = "http://ws.demo.example.com/"
     private val URL = "http://10.0.2.2:8080/services/ws"
 
@@ -86,7 +86,7 @@ class Service {
      */
     fun createCompte(solde: Double, type: TypeCompte): Boolean {
         val request = SoapObject(NAMESPACE, METHOD_CREATE_COMPTE).apply {
-            // ✅ on envoie en String pour éviter "Cannot serialize: 0.0"
+       
             addProperty("solde", solde.toString())
             addProperty("type", type.name) // COURANT ou EPARGNE
         }
